@@ -1,0 +1,25 @@
+#container {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    columns: 2;
+    /* align-items: center; */
+    justify-content: left;
+    font-size: 2em;
+    border: 1px solid black;
+    flex-direction: column;
+    padding: 25px;
+}
+
+#btn {
+    background-color: blue;
+    width: 20%;
+    border-radius: 5%;
+    color: white;
+    border: none;
+    margin-left: 500px;
+}
+
+#row {
+    display: flex;
+    flex-direction: row;
+}
