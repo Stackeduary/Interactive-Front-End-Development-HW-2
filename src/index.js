@@ -1,6 +1,5 @@
 import ReactDOM from 'react-dom'
+import App from './components/App'
 import '../public/index.css'
 
-let currentApp = <PropsApp />
-
-ReactDom.render(currentApp, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))

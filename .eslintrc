@@ -1,15 +1,21 @@
 {
   "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
   "env": {
     "browser": true
   },
   "ignorePatterns": ["public/"],
-  "plugins": ["import"],
+  "plugins": ["import", "react"],
   "extends": [
     "eslint:recommended",
     "google",
     "plugin:import/errors",
-    "plugin:import/warnings"
+    "plugin:import/warnings",
+    "plugin:react/recommended"
   ],
   "rules": {
     "max-len": ["error", 120],
@@ -19,6 +25,12 @@
     "linebreak-style": 0,
     "semi": ["error", "never"],
     "indent": ["error", 4],
-    "eol-last": 0
+    "eol-last": 0,
+    "react/react-in-jsx-scope": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
