@@ -23,19 +23,19 @@
   * Otherwise, the button should be enabled
 
 * After clicking the button:
-  * The city name input and the `Show Weather` button must no longer be displayed, it must not be present in the DOM at all
-  * Display the weather widget that looks exactly as in homework 1, **it should contain previously specified city name**
+  ~~* The city name input and the `Show Weather` button must no longer be displayed, it must not be present in the DOM at all~~
+  ~~* Display the weather widget that looks exactly as in homework 1, it should contain previously specified city name~~
 
 ~~* Absolutely no manual DOM manipulation is allowed, everything must be implemented with React~~
 
 ### React usage (4 / 10 points)
 
-* Maximally **one** React component can hold an instance of the Weather Widget state.
-* All other components must use simple objects (numbers, arrays, objects of the former etc) for props and state.
-* Every component should be as simple (have very little responsibilities) as possible
-  * One component body should not exceed 50 lines
-* Only put state in components that need it
-* All prop types must be validated
+~~* Maximally *one* React component can hold an instance of the Weather Widget state.~~
+~~* All other components must use simple objects (numbers, arrays, objects of the former etc) for props and state.~~
+~~* Every component should be as simple (have very little responsibilities) as possible
+  * One component body should not exceed 50 lines~~
+~~* Only put state in components that need it~~
+~~* All prop types must be validated~~
 
 ~~### Suggestions~~
 

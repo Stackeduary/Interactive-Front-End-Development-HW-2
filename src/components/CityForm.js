@@ -2,23 +2,21 @@ import {useState} from 'react'
 import PropTypes from 'prop-types'
 
 const CityForm = ({cityProp}) => {
-    const [city, setCity] = useState('')
+    const [value, setValue] = useState('')
 
     const changeCity = (event) => {
-        setCity(event.target.city)
+        setValue(event.target.value)
     }
 
     const clickEvent = () => {
-        cityProp(city)
+        cityProp(value)
     }
 
-    const cityTooLong = city.length > 19
-
     return (
-        <div className="city-form">
-            <input type='text' value={city} onChange={changeCity}/>
-            <button disabled={city == '' || cityTooLong} onClick={clickEvent}>Show Weather</button>
-            {cityTooLong && <strong>City name is too long!</strong>}
+        <div>
+            <input type='text' value={value} onChange={changeCity}/>
+            <button className='btn-city' disabled={value == '' || value.length > 19} onClick={clickEvent}>Show Weather</button>
+            {value.length > 19 && <strong>City name is too long!</strong>}
         </div>
     )
 }

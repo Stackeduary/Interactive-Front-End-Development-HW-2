@@ -9,7 +9,7 @@ const App = () => {
         setCity(city)
     }
 
-    if (!city) {
+    if (city == '') {
         return <CityForm cityProp={updateCity} />
     }
 

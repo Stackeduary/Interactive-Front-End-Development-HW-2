@@ -23,8 +23,9 @@ const Randomize = (props) => {
     }
 
     return (
-        <div className="weather-widget">
-            <button onClick={weatherClick}>Generate</button>
+        <div className="container">
+            <h2>{props.city}</h2>
+            <button className='btn' onClick={weatherClick}>Generate</button>
             <strong>Temperature: {weather.temp} °C</strong>
             <strong>Precipitation: {weather.precip}</strong>
             <strong>Wind: {weather.wind} km/h</strong>
@@ -32,7 +33,7 @@ const Randomize = (props) => {
     )
 }
 
-Randomize.PropTypes = {
+Randomize.propTypes = {
     city: PropTypes.string.isRequired
 }
 
