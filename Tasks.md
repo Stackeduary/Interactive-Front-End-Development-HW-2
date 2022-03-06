@@ -43,6 +43,6 @@
   
 ## Sanity check
 
-* Delete node_modules/ directory and JavaScript and CSS files from the public/ directory
-* Run `yarn install && yarn lint && yarn test` and check that your tests pass
-* Run `yarn start` and check that your application works as expected
+~~* Delete node_modules/ directory and JavaScript and CSS files from the public/ directory~~
+~~* Run `yarn install && yarn lint && yarn test` and check that your tests pass~~
+~~* Run `yarn start` and check that your application works as expected~~
