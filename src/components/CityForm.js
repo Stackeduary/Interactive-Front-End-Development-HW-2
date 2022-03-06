@@ -1,29 +1,29 @@
 import {useState} from 'react'
 import PropTypes from 'prop-types'
 
-/*
-This is the only component that will use state.
-State in this case is the name of the city passed in to the app.
-*/
+const CityForm = ({cityProp}) => {
+    const [city, setCity] = useState('')
 
-const CityForm = () => {
-    const [value, setValue] = useState('')
-
-    const handleChange = (event) => {
-        setValue(event.target.value)
+    const changeCity = (event) => {
+        setCity(event.target.city)
     }
+
+    const clickEvent = () => {
+        cityProp(city)
+    }
+
+    const cityTooLong = city.length > 19
 
     return (
         <div className="city-form">
-            <form>
-                <input type='text' value={value} onChange={handleChange}/>
-                <button className="show-weather" disabled={!value}>Show Weather</button>
-            </form>
+            <input type='text' value={city} onChange={changeCity}/>
+            <button disabled={city == '' || cityTooLong} onClick={clickEvent}>Show Weather</button>
+            {cityTooLong && <strong>City name is too long!</strong>}
         </div>
     )
 }
 CityForm.propTypes = {
-    onSubmit: PropTypes.func.isRequired
+    cityProp: PropTypes.func.isRequired
 }
 
 export default CityForm

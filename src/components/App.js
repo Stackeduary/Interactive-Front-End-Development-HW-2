@@ -1,11 +1,21 @@
+import {useState} from 'react'
 import Randomize from './Randomize'
-import ShowWeather from './ShowWeather'
+import CityForm from './CityForm'
 
 const App = () => {
+    const [city, setCity] = useState('')
+
+    const updateCity = (city) => {
+        setCity(city)
+    }
+
+    if (!city) {
+        return <CityForm cityProp={updateCity} />
+    }
+
     return (
         <div className='app'>
-            <ShowWeather />
-            <Randomize />
+            <Randomize city={city} />
         </div>
     )
 }

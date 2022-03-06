@@ -1,26 +1,39 @@
-/*
-Randomize weather generates one random number and then returns an array of three values--
-randomTemp, randomEmojiIndex, randomWind
---that are functions of randomNum.
-This array will be consumed by the GenerateWeather component.
+import {useState} from 'react'
+import PropTypes from 'prop-types'
 
-***Do I need the children prop here?
-*/
-
-const Randomize = () => {
+const Randomize = (props) => {
     const randomNum = Math.random()
     const randomTemp = Math.floor(randomNum * 51) - 20
     const randomEmojiIndex = Math.floor(randomNum * 7)
     const randomWind = Math.floor(randomNum * 11)
     const precipArray = ['☀️', '⛅️', '☁️', '🌩️', '🌧️', '🌦️', '🌨️']
+
+    const [weather, setWeather] = useState({
+        temp: 0,
+        precip: 0,
+        wind: 0
+    })
+
+    const weatherClick = () => {
+        setWeather({
+            temp: randomTemp,
+            precip: precipArray[randomEmojiIndex],
+            wind: randomWind
+        })
+    }
+
     return (
-        <div>
-            <button className='generate-weather'>Generate</button>
-            <strong>Temperature: {randomTemp} °C</strong>
-            <strong>Precipitation: {precipArray[randomEmojiIndex]}</strong>
-            <strong>Wind: {randomWind} km/h</strong>
+        <div className="weather-widget">
+            <button onClick={weatherClick}>Generate</button>
+            <strong>Temperature: {weather.temp} °C</strong>
+            <strong>Precipitation: {weather.precip}</strong>
+            <strong>Wind: {weather.wind} km/h</strong>
         </div>
     )
+}
+
+Randomize.PropTypes = {
+    city: PropTypes.string.isRequired
 }
 
 export default Randomize
