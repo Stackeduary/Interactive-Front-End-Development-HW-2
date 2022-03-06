@@ -13,7 +13,7 @@ const CityForm = ({cityProp}) => {
     }
 
     return (
-        <div>
+        <div className='widget'>
             <input type='text' value={value} onChange={changeCity}/>
             <button className='btn-city' disabled={value == '' || value.length > 19} onClick={clickEvent}>Show Weather</button>
             {value.length > 19 && <strong>City name is too long!</strong>}

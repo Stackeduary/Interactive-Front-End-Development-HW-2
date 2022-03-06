@@ -23,13 +23,23 @@ const Randomize = (props) => {
     }
 
     return (
-        <div className="container">
-            <h2>{props.city}</h2>
-            <button className='btn' onClick={weatherClick}>Generate</button>
-            <strong>Temperature: {weather.temp} °C</strong>
-            <strong>Precipitation: {weather.precip}</strong>
-            <strong>Wind: {weather.wind} km/h</strong>
-        </div>
+        <section className="widget">
+            <div className="widget__header">
+                <h2>{props.city}</h2>
+                <button className='widget__button' onClick={weatherClick}>Generate</button>
+            </div>
+            <div className="widget__content">
+                <div className="widget__row temperature">
+                    <strong>Temperature: {weather.temp} °C</strong>
+                </div>
+                <div className="widget__row precipitation">
+                    <strong>Precipitation: {weather.precip}</strong>
+                </div>
+                <div className="widget__row wind">
+                    <strong>Wind: {weather.wind} km/h</strong>
+                </div>
+            </div>
+        </section>
     )
 }
 
